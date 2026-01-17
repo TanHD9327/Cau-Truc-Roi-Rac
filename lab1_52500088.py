@@ -1,5 +1,5 @@
 import math, string
-def calculate(a, b, op):
+def calculate1(a, b, op):
     if op == "+":
         answer = a + b
     if op == "-":
@@ -13,6 +13,17 @@ def calculate(a, b, op):
     if op == "^":
         answer = a**b
     return answer
+    
+def calculate2(a, b, op):
+   d = {
+   		'+' : a+b, 
+  	 	'-' : a-b, 
+ 	  	'*' : a*b,  
+ 	  	'/' : a/b, 
+ 	  	'%' : a%b, 
+	   	'^' : a**b
+   		}
+   return d[op]
 
 
 def exercise1():
@@ -52,16 +63,20 @@ def exercise4():
     D = "".join(B)
     print(f"(a) = {D}")
     print(f"(b) = {C}")
-           
+
 def exercise5():
-    str = input("Input an operation between 2 postive integers: ")
-    number1, op, number2 = str.split()
-    number1, number2 = int(number1), int(number2)
-    answer = calculate(number1, number2, op) 
-    print(f"{number1} {op} {number2} = {answer}")
-        
+    operation = input("Input an operation between 2 postive integers: ")
+    num1, op, num2 = operation.split()
+    num1, num2 = int(num1), int(num2)
+    answer = calculate1(num1, num2, op) 
+    print(f"{num1} {op} {num2} = {answer}")
+
 def exercise6():
-    a = 1
+    operation = input("Input an operation between 2 postive integers: ")
+    num1, op, num2 = operation.split()
+    num1, num2 = int(num1), int(num2)
+    answer = calculate2(num1, num2, op) 
+    print(f"{num1} {op} {num2} = {answer}")
 def exercise7():
     a = 1
 def exercise8():
